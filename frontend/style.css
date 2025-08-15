@@ -1,0 +1,113 @@
+body {
+  background: #21242c;
+  color: #eaeaea;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#game-container {
+  margin-top: 40px;
+  background: #2a2e39;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0006;
+  padding: 24px;
+  min-width: 420px;
+  max-width: 600px;
+}
+
+#hud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  gap: 10px;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(8, 40px);
+  grid-template-rows: repeat(8, 40px);
+  gap: 2px;
+  margin-bottom: 20px;
+  background: #16171a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  background: #30334a;
+  border: 1px solid #282a38;
+  box-sizing: border-box;
+  position: relative;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.cell.tower {
+  background: #4caf50;
+  box-shadow: 0 0 4px #6fff82;
+}
+
+.cell.base {
+  background: #ff5252;
+  box-shadow: 0 0 8px #f88;
+}
+
+.cell.enemy {
+  background: #ffd600;
+  animation: enemy-move 0.8s linear infinite alternate;
+}
+
+@keyframes enemy-move {
+  0% { box-shadow: 0 0 4px #fff900; }
+  100% { box-shadow: 0 0 10px #fff90088; }
+}
+
+#controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+button {
+  background: #393f5f;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.16s;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: #50587d;
+}
+
+#ai-feedback {
+  flex-basis: 100%;
+  margin-top: 8px;
+  color: #ffd600;
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  #game-container {
+    min-width: unset;
+    padding: 8px;
+  }
+  #grid {
+    grid-template-columns: repeat(8, 24px);
+    grid-template-rows: repeat(8, 24px);
+  }
+  .cell {
+    width: 24px;
+    height: 24px;
+  }
+}
