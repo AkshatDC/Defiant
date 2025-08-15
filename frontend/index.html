@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tower Defense RL Game</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="game-container">
+    <div id="hud">
+      <div id="health">Base Health: <span id="health-value">100</span></div>
+      <div id="resources">Money: <span id="money-value">100</span></div>
+      <div id="wave-progress">Wave: <span id="wave-num">1</span> (<span id="wave-bar"></span>)</div>
+      <div id="ai-feedback">AI: <span id="ai-message"></span></div>
+    </div>
+    <div id="grid"></div>
+    <div id="controls">
+      <button id="place-tower-btn">Place Tower</button>
+      <button id="start-wave-btn">Start Wave</button>
+      <button id="upgrade-tower-btn">Upgrade Towers</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
